@@ -61,5 +61,5 @@ services:
      placement:
        constraints: [node.labels.rabbitmq==3]
  
- networks:
-   net:
+networks:
+  net:
