@@ -47,7 +47,7 @@ services:
       - RABBITMQ_USER=admin
       - RABBITMQ_PASSWORD=adminpwd
       - RABBITMQ_CLUSTER_NODES='rabbit@rabbit-1 rabbit@rabbit-2'
-      - RABBITMQ_NODENAME=rabbit@rabbit-2
+      - RABBITMQ_NODENAME=rabbit@rabbit
       - RABBITMQ_ERLANG_COOKIE=a-little-secret
       - RABBITMQ_FIREHOSE_QUEUENAME=trace
       - RABBITMQ_FIREHOSE_ROUTINGKEY=publish.#
