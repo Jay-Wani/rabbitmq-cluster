@@ -40,23 +40,23 @@ services:
      placement:
        constraints: [node.labels.rabbitmq==2]
 
-  rabbit:
-    image: kuznero/rabbitmq:3.6.6-cluster
-    environment:
-      - RABBITMQ_SETUP_DELAY=20
-      - RABBITMQ_USER=admin
-      - RABBITMQ_PASSWORD=adminpwd
-      - RABBITMQ_CLUSTER_NODES='rabbit@rabbit-1 rabbit@rabbit-2'
-      - RABBITMQ_NODENAME=rabbit@rabbit
-      - RABBITMQ_ERLANG_COOKIE=a-little-secret
-      - RABBITMQ_FIREHOSE_QUEUENAME=trace
-      - RABBITMQ_FIREHOSE_ROUTINGKEY=publish.#
-    ports:
-      - 15672:15672    
-    networks:
-      - net
-    volumes:
-      - /data/rabbitmq-3:/var/lib/rabbitmq
-    deploy:
-      placement:
-        constraints: [node.labels.rabbitmq==3]
+ rabbit:
+   image: kuznero/rabbitmq:3.6.6-cluster
+   environment:
+     - RABBITMQ_SETUP_DELAY=20
+     - RABBITMQ_USER=admin
+     - RABBITMQ_PASSWORD=adminpwd
+     - RABBITMQ_CLUSTER_NODES='rabbit@rabbit-1 rabbit@rabbit-2'
+     - RABBITMQ_NODENAME=rabbit@rabbit
+     - RABBITMQ_ERLANG_COOKIE=a-little-secret
+     - RABBITMQ_FIREHOSE_QUEUENAME=trace
+     - RABBITMQ_FIREHOSE_ROUTINGKEY=publish.#
+   ports:
+     - 15672:15672    
+   networks:
+     - net
+   volumes:
+     - /data/rabbitmq-3:/var/lib/rabbitmq
+   deploy:
+     placement:
+       constraints: [node.labels.rabbitmq==3]
