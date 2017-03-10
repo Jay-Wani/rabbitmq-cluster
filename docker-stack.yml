@@ -60,3 +60,6 @@ services:
    deploy:
      placement:
        constraints: [node.labels.rabbitmq==3]
+ 
+ networks:
+   net:
